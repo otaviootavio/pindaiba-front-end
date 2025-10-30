@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Pindaiba Tropical-Dark Palette */
+    --background: 0 0% 4.7%; /* #0C0C0C - preto mineral */
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 4.7%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 160 100% 41.6%; /* #00D38F - verde-mata neon */
+    --primary-foreground: 0 0% 4.7%;
+
+    --secondary: 155 37% 17%; /* #1E382E - verde-musgo */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 155 37% 17%;
+    --muted-foreground: 0 0% 71%; /* #B5B5B5 - cinza-nevoa */
+
+    --accent: 68 100% 68%; /* #E2FF5A - amarelo ácido */
+    --accent-foreground: 0 0% 4.7%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 160 100% 41.6%;
+
+    --radius: 0.5rem;
+
+    /* Pindaiba Custom Tokens */
+    --terminal-green: 160 100% 41.6%;
+    --glitch-yellow: 68 100% 68%;
+    --tropical-dark: 0 0% 7%;
+    --moss-green: 155 37% 17%;
+    
+    --sidebar-background: 0 0% 4.7%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 160 100% 41.6%;
+    --sidebar-primary-foreground: 0 0% 4.7%;
+    --sidebar-accent: 155 37% 17%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 14%;
+    --sidebar-ring: 160 100% 41.6%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    cursor: crosshair;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 7px,
+        hsl(var(--border) / 0.03) 7px,
+        hsl(var(--border) / 0.03) 8px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 7px,
+        hsl(var(--border) / 0.03) 7px,
+        hsl(var(--border) / 0.03) 8px
+      );
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .font-terminal {
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.02em;
+  }
+
+  .text-terminal {
+    color: hsl(var(--terminal-green));
+    text-shadow: 0 0 8px hsl(var(--terminal-green) / 0.5);
+  }
+
+  .text-glitch {
+    color: hsl(var(--glitch-yellow));
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-typing {
+    overflow: hidden;
+    border-right: 2px solid hsl(var(--terminal-green));
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(5deg);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--accent) / 0.5);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--accent) / 0.8);
+    }
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: hsl(var(--terminal-green));
+    }
+  }
+
+  .glitch-effect {
+    position: relative;
+  }
+
+  .glitch-effect::before,
+  .glitch-effect::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch-effect::before {
+    left: 2px;
+    text-shadow: -2px 0 hsl(var(--accent));
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim 3s infinite linear alternate-reverse;
+  }
+
+  .glitch-effect::after {
+    left: -2px;
+    text-shadow: -2px 0 hsl(var(--primary));
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim 2s infinite linear alternate-reverse;
+  }
+
+  @keyframes glitch-anim {
+    0% {
+      clip: rect(3px, 9999px, 83px, 0);
+    }
+    20% {
+      clip: rect(95px, 9999px, 12px, 0);
+    }
+    40% {
+      clip: rect(37px, 9999px, 61px, 0);
+    }
+    60% {
+      clip: rect(72px, 9999px, 29px, 0);
+    }
+    80% {
+      clip: rect(18px, 9999px, 98px, 0);
+    }
+    100% {
+      clip: rect(44px, 9999px, 55px, 0);
+    }
+  }
+}
