@@ -1,11 +1,11 @@
 import { Wallet, Coins, MessageCircle, Globe, TrendingUp, Users } from "lucide-react";
 
 const ecosystemItems = [
-  { icon: Wallet, label: "XUMM", description: "Wallet oficial" },
-  { icon: Coins, label: "Sologenic DEX", description: "Trading" },
+  { icon: Wallet, label: "MetaMask", description: "Wallet oficial" },
+  { icon: Coins, label: "Uniswap", description: "Trading" },
   { icon: MessageCircle, label: "Telegram", description: "Comunidade" },
-  { icon: Globe, label: "XRPL.org", description: "Blockchain" },
-  { icon: TrendingUp, label: "XRP Charts", description: "Analytics" },
+  { icon: Globe, label: "Polygon", description: "Blockchain" },
+  { icon: TrendingUp, label: "DEXTools", description: "Analytics" },
   { icon: Users, label: "Holders", description: "Governança" },
 ];
 
@@ -29,7 +29,7 @@ export const Ecosystem = () => {
             O Ecossistema é o Meme.
           </h2>
           <p className="font-terminal text-sm text-muted-foreground mb-16">
-            {'>>> '} Integrado. Descentralizado. Tropical.
+            {'>>> '} Polygon. Uniswap. Descentralizado. Tropical.
           </p>
 
           {/* Ecosystem Grid */}

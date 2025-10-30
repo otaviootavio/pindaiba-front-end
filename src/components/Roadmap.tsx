@@ -1,12 +1,11 @@
 export const Roadmap = () => {
   const roadmapItems = [
-    { status: "completed", text: "Emissão mainnet" },
-    { status: "completed", text: "Trustline pública" },
+    { status: "completed", text: "Pool USCT-PIND (Uniswap)" },
     { status: "completed", text: "Website oficial" },
-    { status: "in-progress", text: "Airdrop comunitário" },
-    { status: "pending", text: "Listagem em DEX (Sologenic)" },
+    { status: "in-progress", text: "Indexadores/trackers (DEXTools/Gecko)" },
+    { status: "pending", text: "Airdrop comunitário" },
     { status: "pending", text: "NFT Collection da Pindaiba" },
-    { status: "pending", text: "Integração XUMM Wallet" },
+    { status: "pending", text: "Integração MetaMask/WalletConnect" },
     { status: "pending", text: "Governança descentralizada" },
   ];
 
@@ -18,7 +17,7 @@ export const Roadmap = () => {
             Roadmap
           </h2>
           <p className="font-terminal text-sm text-center text-muted-foreground mb-16">
-            {'>>> '} Execução em tempo real. Status: ATIVO
+            {'>>> '} Execução em tempo real na Polygon. Status: ATIVO
           </p>
 
           {/* Terminal Style Roadmap */}

@@ -13,19 +13,19 @@ enquanto moedas perdem valor,
 enquanto bancos tremem —
 
 Nós plantamos código.
-Nós mineramos consenso.
-Nós validamos descentralização.
+Nós assinamos transações.
+Nós validamos blocos.
 
-A Pindaiba Coin não é apenas um token.
+A Pindaiba (PIND) não é apenas um token.
 É um manifesto tropical.
-Um protocolo de resistência.
-Uma piada séria.
+Liquidez na Uniswap. Finalidade na Polygon.
+Contrato transparente. Comunidade soberana.
 
 Da Bahia para o mundo.
 Da crise para o protocolo.
-Da pindaíba para o ledger.
+Da pindaíba para a chain.
 
->>> EXECUTE: liberdade_financeira.sh
+>>> EXECUTE: add_liquidity --pair USCT<->PIND --network polygon
 >>> STATUS: irreversível
 `.trim();
 

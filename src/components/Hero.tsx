@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import pindaibaIcon from "@/assets/pindaiba-icon.png";
+import { UNISWAP_URL, POLYGONSCAN_URL } from "@/lib/links";
 
 export const Hero = () => {
   return (
@@ -38,18 +39,24 @@ export const Hero = () => {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
+            asChild
             variant="terminal" 
             size="xl"
             className="min-w-[240px]"
           >
-            Adicionar Trustline
+            <a href={UNISWAP_URL} target="_blank" rel="noopener noreferrer" aria-label="Comprar PIND no Uniswap (abre em nova aba)">
+              Comprar no Uniswap
+            </a>
           </Button>
           <Button 
+            asChild
             variant="outline" 
             size="xl"
             className="min-w-[240px]"
           >
-            Ver no XRPL
+            <a href={POLYGONSCAN_URL} target="_blank" rel="noopener noreferrer" aria-label="Ver token PIND no PolygonScan (abre em nova aba)">
+              Ver no PolygonScan
+            </a>
           </Button>
         </div>
 

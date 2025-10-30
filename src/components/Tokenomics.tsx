@@ -116,7 +116,7 @@ export const Tokenomics = () => {
                 Blockchain
               </div>
               <div className="font-display text-xl font-bold text-terminal">
-                XRP Ledger
+                Polygon
               </div>
             </div>
             <div className="bg-card border border-terminal/20 rounded p-6">
@@ -124,15 +124,15 @@ export const Tokenomics = () => {
                 Tipo
               </div>
               <div className="font-display text-xl font-bold text-terminal">
-                Issued Token
+                ERC-20
               </div>
             </div>
             <div className="bg-card border border-terminal/20 rounded p-6">
               <div className="font-terminal text-xs text-muted-foreground uppercase mb-2">
-                Trustline
+                Pool
               </div>
               <div className="font-display text-xl font-bold text-terminal">
-                Pública
+                USCT ↔ PIND (Uniswap)
               </div>
             </div>
           </div>

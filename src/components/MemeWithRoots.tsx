@@ -6,10 +6,10 @@ export const MemeWithRoots = () => {
       {/* Code Overlay Texture */}
       <div className="absolute inset-0 opacity-5 font-terminal text-xs text-terminal pointer-events-none overflow-hidden">
         <pre className="whitespace-pre leading-relaxed">
-{`XRPL.tx.mint()
-trustline.create()
-ledger.validate()
-consensus.achieved()
+{`erc20.approve()
+uniswap.addLiquidity(USCT, PIND)
+swap.execute(USCT->PIND)
+polygon.finalized()
 transaction.confirmed()
 `.repeat(20)}
         </pre>
@@ -54,7 +54,7 @@ transaction.confirmed()
               <p className="text-terminal">
                 {'>>> '} Da crise nasce o código.
                 <br />
-                {'>>> '} Da pindaíba nasce o protocolo.
+                {'>>> '} Da pindaíba nasce a liquidez.
               </p>
             </div>
 
