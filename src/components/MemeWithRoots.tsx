@@ -64,7 +64,7 @@ transaction.confirmed()
                 <div className="text-xs font-terminal text-muted-foreground uppercase">Orgânico</div>
               </div>
               <div className="border border-terminal/20 rounded p-4">
-                <div className="text-3xl font-bold text-terminal">XRPL</div>
+                <div className="text-3xl font-bold text-terminal">Polygon</div>
                 <div className="text-xs font-terminal text-muted-foreground uppercase">Mainnet</div>
               </div>
               <div className="border border-terminal/20 rounded p-4">
